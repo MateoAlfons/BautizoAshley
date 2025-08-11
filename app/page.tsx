@@ -67,7 +67,8 @@ export default function BautizoAshley() {
     '/carrusel/ash11.jpeg',
     '/carrusel/ash12.jpeg',
     '/carrusel/ash13.jpeg',
-    '/carrusel/ash14.jpeg'
+    '/carrusel/ash14.jpeg',
+    '/carrusel/ash15.jpeg'
   ]
 
   // Autoplay del carousel
