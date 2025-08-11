@@ -53,7 +53,6 @@ export default function BautizoAshley() {
 
   // Lista de imágenes locales del carousel
   const galleryImages = [
-    '/carrusel/ash0.jpeg',
     '/carrusel/ash1.jpeg',
     '/carrusel/ash2.jpeg',
     '/carrusel/ash3.jpeg',
@@ -68,7 +67,8 @@ export default function BautizoAshley() {
     '/carrusel/ash12.jpeg',
     '/carrusel/ash13.jpeg',
     '/carrusel/ash14.jpeg',
-    '/carrusel/ash15.jpeg'
+    '/carrusel/ash15.jpeg',
+    '/carrusel/ash16.jpeg'
   ]
 
   // Autoplay del carousel
