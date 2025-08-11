@@ -40,7 +40,8 @@ export default function BautizoAshley() {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 })
   const [adultos, setAdultos] = useState<number>(0)
   const [ninos, setNinos] = useState<number>(0)
-  const [nombres, setNombres] = useState<string[]>([])
+  const [nombresAdultos, setNombresAdultos] = useState<string[]>([])
+  const [nombresNinos, setNombresNinos] = useState<string[]>([])
   const [mensaje, setMensaje] = useState<string>("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -65,7 +66,8 @@ export default function BautizoAshley() {
     '/carrusel/ash10.jpeg',
     '/carrusel/ash11.jpeg',
     '/carrusel/ash12.jpeg',
-    '/carrusel/ash13.jpeg'
+    '/carrusel/ash13.jpeg',
+    '/carrusel/ash14.jpeg'
   ]
 
   // Autoplay del carousel
@@ -170,14 +172,23 @@ export default function BautizoAshley() {
   }, [])
 
   useEffect(() => {
-    const totalPersonas = adultos + ninos
-    setNombres(new Array(totalPersonas).fill(""))
-  }, [adultos, ninos])
+    setNombresAdultos(new Array(adultos).fill(""))
+  }, [adultos])
 
-  const handleNombreChange = (index: number, value: string) => {
-    const newNombres = [...nombres]
+  useEffect(() => {
+    setNombresNinos(new Array(ninos).fill(""))
+  }, [ninos])
+
+  const handleNombreAdultoChange = (index: number, value: string) => {
+    const newNombres = [...nombresAdultos]
     newNombres[index] = value
-    setNombres(newNombres)
+    setNombresAdultos(newNombres)
+  }
+
+  const handleNombreNinoChange = (index: number, value: string) => {
+    const newNombres = [...nombresNinos]
+    newNombres[index] = value
+    setNombresNinos(newNombres)
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -186,14 +197,19 @@ export default function BautizoAshley() {
 
     try {
       // Preparar mensaje para WhatsApp
-      const nombresTexto = nombres.filter(nombre => nombre.trim() !== "").join(", ")
+      const nombresAdultosTexto = nombresAdultos.filter(nombre => nombre.trim() !== "").join(", ")
+      const nombresNinosTexto = nombresNinos.filter(nombre => nombre.trim() !== "").join(", ")
       
       let mensaje_whatsapp = `*CONFIRMACIÓN DE ASISTENCIA - BAUTIZO ASHLEY*\n\n`
       mensaje_whatsapp += `Cantidad de Adultos: ${adultos}\n`
       mensaje_whatsapp += `Cantidad de Niños: ${ninos}\n\n`
       
-      if (nombresTexto) {
-        mensaje_whatsapp += `Nombres de los asistentes:\n${nombresTexto}\n\n`
+      if (nombresAdultosTexto) {
+        mensaje_whatsapp += `Nombres de Adultos:\n${nombresAdultosTexto}\n\n`
+      }
+      
+      if (nombresNinosTexto) {
+        mensaje_whatsapp += `Nombres de Niños:\n${nombresNinosTexto}\n\n`
       }
       
       if (mensaje.trim()) {
@@ -226,7 +242,8 @@ export default function BautizoAshley() {
       // Resetear formulario
       setAdultos(0)
       setNinos(0)
-      setNombres([])
+      setNombresAdultos([])
+      setNombresNinos([])
       setMensaje("")
     } catch (error) {
       alert("Hubo un error al procesar la confirmación. Por favor intenta de nuevo.")
@@ -640,16 +657,32 @@ export default function BautizoAshley() {
                   </div>
                 </div>
 
-                {nombres.length > 0 && (
+                {nombresAdultos.length > 0 && (
                   <div>
-                    <Label>Nombres de las personas que asistirán:</Label>
+                    <Label>Nombres de los Adultos que asistirán:</Label>
                     <div className="space-y-2 mt-2">
-                      {nombres.map((nombre, index) => (
+                      {nombresAdultos.map((nombre, index) => (
                         <Input
-                          key={index}
-                          placeholder={`Nombre de la persona ${index + 1}`}
+                          key={`adulto-${index}`}
+                          placeholder={`Nombre del adulto ${index + 1}`}
                           value={nombre}
-                          onChange={(e) => handleNombreChange(index, e.target.value)}
+                          onChange={(e) => handleNombreAdultoChange(index, e.target.value)}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {nombresNinos.length > 0 && (
+                  <div>
+                    <Label>Nombres de los Niños que asistirán:</Label>
+                    <div className="space-y-2 mt-2">
+                      {nombresNinos.map((nombre, index) => (
+                        <Input
+                          key={`nino-${index}`}
+                          placeholder={`Nombre del niño ${index + 1}`}
+                          value={nombre}
+                          onChange={(e) => handleNombreNinoChange(index, e.target.value)}
                         />
                       ))}
                     </div>
