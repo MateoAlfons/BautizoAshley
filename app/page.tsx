@@ -9,7 +9,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Clock, Phone, Heart, Baby, ChevronLeft, ChevronRight, Volume2, VolumeX } from "lucide-react"
+import { MapPin, Clock, Phone, Heart, Baby, ChevronLeft, ChevronRight, Volume2, VolumeX, Church, Wine } from "lucide-react"
 import { useIsMobile } from "@/hooks/use-mobile"
 
 interface TimeLeft {
@@ -74,7 +74,7 @@ export default function BautizoAshley() {
       setCurrentImageIndex((prevIndex) => {
         return prevIndex === galleryImages.length - 1 ? 0 : prevIndex + 1
       })
-    }, 5000) // Cambiar cada 5 segundos
+    }, 2000) // Cambiar cada 2 segundos
 
     return () => {
       if (intervalRef.current) {
@@ -265,9 +265,9 @@ export default function BautizoAshley() {
         <div className="relative max-w-6xl mx-auto">
           <div className="mb-8 text-center">
             {/* <Baby className="w-16 h-16 mx-auto mb-4 text-pink-400" /> */}
-            <h1 className="text-8xl font-black bg-gradient-to-r from-pink-400 via-pink-300 to-pink-200 bg-clip-text text-transparent drop-shadow-lg mb-2 tracking-wider" 
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-pink-400 via-pink-300 to-pink-200 bg-clip-text text-transparent drop-shadow-lg mb-2 tracking-wider leading-tight" 
                 style={{ fontFamily: 'Georgia, serif' }}>MI BAUTIZO</h1>
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 bg-clip-text text-transparent drop-shadow-md mb-8 tracking-widest" 
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 bg-clip-text text-transparent drop-shadow-md mb-8 tracking-widest leading-tight" 
                 style={{ fontFamily: 'Georgia, serif' }}>ASHLEY DAYANNA</h2>
           </div>
 
@@ -278,7 +278,7 @@ export default function BautizoAshley() {
               <Image src="/images/ashley-3.jpeg" alt="Ashley sonriendo" fill className="object-cover" />
               <div className="absolute inset-0 bg-black/20"></div>
               <div className="absolute bottom-4 left-0 right-0 flex justify-center">
-                <span className="text-6xl font-bold text-white drop-shadow-2xl">13</span>
+                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-white drop-shadow-2xl">13</span>
               </div>
             </div>
 
@@ -287,7 +287,7 @@ export default function BautizoAshley() {
               <Image src="/images/ashley-2.jpeg" alt="Ashley en el auto" fill className="object-cover" />
               <div className="absolute inset-0 bg-black/20"></div>
               <div className="absolute bottom-4 left-0 right-0 flex justify-center">
-                <span className="text-6xl font-bold text-white drop-shadow-2xl">DIC</span>
+                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-white drop-shadow-2xl">DIC</span>
               </div>
             </div>
 
@@ -296,14 +296,14 @@ export default function BautizoAshley() {
               <Image src="/images/ashley-1.jpeg" alt="Ashley en el columpio" fill className="object-cover" />
               <div className="absolute inset-0 bg-black/20"></div>
               <div className="absolute bottom-4 left-0 right-0 flex justify-center">
-                <span className="text-6xl font-bold text-white drop-shadow-2xl">25</span>
+                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-white drop-shadow-2xl">25</span>
               </div>
             </div>
           </div>
 
           {/* Mensaje principal */}
-          <div className="bg-pink-100/60 backdrop-blur-sm rounded-lg p-8 shadow-lg mb-8">
-            <p className="text-lg text-gray-800 leading-relaxed text-center max-w-4xl mx-auto">
+          <div className="bg-pink-100/60 backdrop-blur-sm rounded-lg p-4 sm:p-6 md:p-8 shadow-lg mb-8">
+            <p className="text-sm sm:text-base md:text-lg text-gray-800 leading-relaxed text-center max-w-4xl mx-auto">
               CON INMENSA ALEGRÍA EN NUESTROS CORAZONES, QUEREMOS COMPARTIR CONTIGO UN MOMENTO MUY ESPECIAL: EL DÍA EN
               QUE <strong>ASHLEY DAYANNA PRADO MARTÍNEZ</strong> RECIBIRÁ EL SACRAMENTO DEL BAUTISMO Y COMENZARÁ SU
               CAMINO EN LA FE, RODEADO DEL AMOR DE SU FAMILIA Y DE DIOS.
@@ -325,19 +325,19 @@ export default function BautizoAshley() {
 
           {/* Padres */}
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-pink-500 mb-4">CON LA BENDICIÓN DE DIOS Y MIS QUERIDOS PADRES</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-pink-500 mb-4">CON LA BENDICIÓN DE DIOS Y MIS QUERIDOS PADRES</h3>
             <div className="space-y-2">
-              <p className="text-xl font-semibold text-gray-800">DAIRA VIOLETA MARTÍNEZ LEYVA</p>
-              <p className="text-xl font-semibold text-gray-800">LUIS EDUARDO PRADO GARCIA</p>
+              <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-800">DAIRA VIOLETA MARTÍNEZ LEYVA</p>
+              <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-800">LUIS EDUARDO PRADO GARCÍA</p>
             </div>
           </div>
 
           {/* Padrinos */}
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-pink-500 mb-4">Y EN COMPAÑÍA DE MIS PADRINOS</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-pink-500 mb-4">Y EN COMPAÑÍA DE MIS PADRINOS</h3>
             <div className="space-y-2">
-              <p className="text-xl font-semibold text-gray-800">METZTLI JAZMIN MARTINEZ LEYVA</p>
-              <p className="text-xl font-semibold text-gray-800">MATEO RODRIGUEZ ALFONSO</p>
+              <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-800">METZTLI JAZMÍN MARTÍNEZ LEYVA</p>
+              <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-800">MATEO RODRÍGUEZ ALFONSO</p>
             </div>
           </div>
         </div>
@@ -417,7 +417,7 @@ export default function BautizoAshley() {
             <Card className="p-6">
               <CardContent>
                 <div className="flex items-center mb-4">
-                  <Clock className="w-6 h-6 mr-2 text-pink-500" />
+                  <Church className="w-6 h-6 mr-2 text-pink-500" />
                   <h4 className="text-xl font-bold text-gray-800">CEREMONIA RELIGIOSA</h4>
                 </div>
                 <p className="text-gray-600 mb-2">
@@ -449,7 +449,7 @@ export default function BautizoAshley() {
             <Card className="p-6">
               <CardContent>
                 <div className="flex items-center mb-4">
-                  <Heart className="w-6 h-6 mr-2 text-blue-500" />
+                  <Wine className="w-6 h-6 mr-2 text-blue-500" />
                   <h4 className="text-xl font-bold text-gray-800">RECEPCIÓN</h4>
                 </div>
                 <p className="text-gray-600 mb-2">
@@ -620,8 +620,9 @@ export default function BautizoAshley() {
                       id="adultos"
                       type="number"
                       min="0"
-                      value={adultos}
+                      value={adultos === 0 ? "" : adultos}
                       onChange={(e) => setAdultos(Number.parseInt(e.target.value) || 0)}
+                      placeholder="0"
                       className="mt-1"
                     />
                   </div>
@@ -631,8 +632,9 @@ export default function BautizoAshley() {
                       id="ninos"
                       type="number"
                       min="0"
-                      value={ninos}
+                      value={ninos === 0 ? "" : ninos}
                       onChange={(e) => setNinos(Number.parseInt(e.target.value) || 0)}
+                      placeholder="0"
                       className="mt-1"
                     />
                   </div>
@@ -721,16 +723,16 @@ export default function BautizoAshley() {
       <footer className="py-0 px-0 bg-gradient-to-r from-pink-400 via-pink-300 to-purple-300 relative overflow-hidden">
         <div className="flex flex-col md:flex-row items-center min-h-[300px]">
           {/* Texto ¡TE ESPERAMOS! */}
-          <div className="flex-1 px-8 md:px-16 py-12 text-center md:text-left">
+          <div className="flex-1 px-4 sm:px-8 md:px-16 py-8 sm:py-12 text-center md:text-left">
             <h2
-              className="text-5xl md:text-7xl font-bold text-white drop-shadow-lg leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white drop-shadow-lg leading-tight"
               style={{
                 textShadow: "3px 3px 0px rgba(0,0,0,0.2), -1px -1px 0px rgba(255,255,255,0.1)",
               }}
             >
               ¡TE ESTARÉ ESPERANDO!
             </h2>
-            <p className="text-xl md:text-2xl text-white/90 mt-4 font-light">Con amor, Ashley</p>
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mt-4 font-light">Con amor, Ashley</p>
           </div>
 
           {/* Foto de la familia */}
