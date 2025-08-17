@@ -772,7 +772,7 @@ export default function BautizoAshley() {
           {/* Foto de la familia */}
           <div className="flex-shrink-0 w-full md:w-1/3 h-[300px] relative">
             <Image
-              src="/images/ashley-family.jpeg"
+              src="/images/Ashh.jpeg"
               alt="Familia Prado Martínez"
               fill
               className="object-cover object-center"
