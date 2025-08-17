@@ -769,15 +769,15 @@ export default function BautizoAshley() {
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 mt-4 font-light">Con amor, Ashley</p>
           </div>
 
-          {/* Foto de la familia */}
-          <div className="flex-shrink-0 w-full md:w-1/3 h-[300px] relative">
+          {/* Foto de Ashley */}
+          <div className="flex-shrink-0 w-full md:w-1/3 h-[300px] md:h-[350px] relative overflow-hidden rounded-lg md:rounded-none bg-white/10 backdrop-blur-sm">
             <Image
               src="/images/Ashh.jpeg"
-              alt="Familia Prado Martínez"
+              alt="Ashley"
               fill
-              className="object-cover object-center"
+              className="object-contain hover:scale-105 transition-transform duration-300"
             />
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-pink-400/20"></div>
+            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-transparent via-transparent to-pink-400/5"></div>
           </div>
         </div>
 
